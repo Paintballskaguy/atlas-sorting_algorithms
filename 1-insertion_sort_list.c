@@ -51,7 +51,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			listint_t *prev_insert_point = insert_point->prev;
 			swap_nodes(list, insert_point, current);
-			insert_point = current->prev;
+			insert_point = prev_insert_point;
 		}
 		current = next;
 	}
