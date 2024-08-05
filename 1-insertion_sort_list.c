@@ -35,7 +35,7 @@ void swap_nodes(listint_t **list, listint_t *left, listint_t *right)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current, *next, *insert_point;
+	listint_t *current, *next, *insert_point, *prev_insert_point;
 
 	if (!list || !*list || !(*list)->next)
 		return;
@@ -49,6 +49,7 @@ void insertion_sort_list(listint_t **list)
 
 		while (insert_point && current->n < insert_point->n)
 		{
+			prev_insert_point = insert_point->prev;
 			swap_nodes(list, insert_point, current);
 			insert_point = current->prev;
 		}
